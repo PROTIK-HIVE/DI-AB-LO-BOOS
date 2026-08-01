@@ -6,7 +6,7 @@ const axios = require("axios");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Render / Koyeb সার্ভার যেন লাইভ থাকে সেজন্য সিম্পল এক্সপ্রেস সার্ভার
+// Render / Koyeb সার্ভার লাইভ রাখার জন্য এক্সপ্রেস সার্ভার
 app.get("/", (req, res) => {
 	res.send("🔥 Diablo Roasting Bot is Running Alive!");
 });
@@ -18,13 +18,13 @@ app.listen(PORT, () => {
 // Gemini API Key
 const GEMINI_API_KEY = "AQ.Ab8RN6IwWksRsBu9J56Zkg7E9NaOrzL5VoXTILrp7dF7XqC8MQ";
 
-// ১. AppState/Cookie চেক করা
-if (!fs.existsSync("./account.js")) {
-	console.error("❌ Error: 'appstate.json' ফাইলটি পাওয়া যায়নি! ফেসবুক কুকি দিন।");
+// ১. account.txt (কুকি ফাইল) চেক করা
+if (!fs.existsSync("./account.txt")) {
+	console.error("❌ Error: 'account.txt' ফাইলটি পাওয়া যায়নি! ফেসবুক কুকি দিন।");
 	process.exit(1);
 }
 
-const appState = JSON.parse(fs.readFileSync("./appstate.json", "utf8"));
+const appState = JSON.parse(fs.readFileSync("./account.txt", "utf8"));
 
 // ২. ফেসবুক বটে লগইন করা
 login({ appState }, (err, api) => {
@@ -138,4 +138,4 @@ Do not use formal or polite language. Throw witty, funny insults and trollings, 
 		console.error("Diablo Gemini Error:", err?.response?.data || err?.message);
 		return api.sendMessage("প্রতীক বসের পাওয়ার দেখে তোর কথা বন্ধ হয়ে গেছে নাকি? উত্তর দেওয়ার টাইমে সার্ভার হ্যাং করাস কেন! 🤪", threadID, messageID);
 	}
-}
+}vvv
