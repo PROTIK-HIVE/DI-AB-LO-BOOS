@@ -24,7 +24,15 @@ if (!fs.existsSync("./account.txt")) {
 	process.exit(1);
 }
 
-const appState = JSON.parse(fs.readFileSync("./account.txt", "utf8"));
+// কুকি ডোমেইন অটো-ফিক্স
+let appStateRaw = fs.readFileSync("./account.txt", "utf8");
+let appState = JSON.parse(appStateRaw);
+
+appState = appState.map(cookie => {
+	delete cookie.hostOnly; // ডোমেইন লক রিমুভ
+	cookie.domain = "facebook.com"; // ডোমেইন সমান করা
+	return cookie;
+});
 
 // ২. ফেসবুক বটে লগইন করা
 login({ appState }, (err, api) => {
