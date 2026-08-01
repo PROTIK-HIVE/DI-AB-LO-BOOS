@@ -19,7 +19,7 @@ app.listen(PORT, () => {
 const GEMINI_API_KEY = "AQ.Ab8RN6IwWksRsBu9J56Zkg7E9NaOrzL5VoXTILrp7dF7XqC8MQ";
 
 // ১. AppState/Cookie চেক করা
-if (!fs.existsSync("./appstate.json")) {
+if (!fs.existsSync("./account.js")) {
 	console.error("❌ Error: 'appstate.json' ফাইলটি পাওয়া যায়নি! ফেসবুক কুকি দিন।");
 	process.exit(1);
 }
