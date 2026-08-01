@@ -138,4 +138,4 @@ Do not use formal or polite language. Throw witty, funny insults and trollings, 
 		console.error("Diablo Gemini Error:", err?.response?.data || err?.message);
 		return api.sendMessage("প্রতীক বসের পাওয়ার দেখে তোর কথা বন্ধ হয়ে গেছে নাকি? উত্তর দেওয়ার টাইমে সার্ভার হ্যাং করাস কেন! 🤪", threadID, messageID);
 	}
-}vvv
+}
