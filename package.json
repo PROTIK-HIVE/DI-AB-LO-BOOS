@@ -1,7 +1,7 @@
 {
   "name": "diablo-roasting-bot",
   "version": "1.0.0",
-  "description": "Diablo - Personal Assistant of Pratik Shah Roasting Bot",
+  "description": "Diablo - Personal Assistant of Protik Shah Roasting Bot",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -9,6 +9,6 @@
   "dependencies": {
     "axios": "^1.6.8",
     "express": "^4.19.2",
-    "fca-horizon-remake": "latest"
+    "fca-horizon-remake": "^31.40.1"
   }
 }
